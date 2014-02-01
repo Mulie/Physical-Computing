@@ -1,0 +1,42 @@
+
+//Mulugeta Bisrat
+//Lab 3
+//The program records the highest and lowest value of the light in a room 
+//with in 10 seconds and responds if the value is low it turns the Led on and 
+//if the light is high it turns the led off. 
+//Instead of the light being recorded 0 and 1023 it constrains it to between 10 to 500.
+
+const int ledPin = 13;
+int sensorMin = 1023;        
+int sensorMax = 0;    
+int senValue = 0;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+  
+  Serial.println(analogRead(A0));
+  senValue = analogRead(A0);
+  senValue = constrain(senValue, 10, 500);
+ while (millis() < 10000) {
+   senValue = analogRead(A0);
+   senValue = constrain(senValue, 10, 500);
+
+   if (senValue > sensorMax) {
+     sensorMax = senValue;
+   }
+
+   if (senValue < sensorMin) {
+     sensorMin = senValue;
+   }
+ }
+  
+if (senValue <= sensorMin) {
+digitalWrite(ledPin, HIGH);}
+if (senValue >= sensorMax) {
+  digitalWrite(ledPin, LOW);}
+}
