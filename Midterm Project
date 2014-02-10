@@ -1,0 +1,87 @@
+//////////////////////////
+
+/*Mulugeta Bisrat
+Midterm Project
+Physical Computing */
+
+const int buttonPin1 = 3;        
+const int buttonPin2 = 4;         
+const int buttonPin3 = 5;          
+int buttonState1 = 0; 
+int buttonState2 = 0;
+int buttonState3 = 0;
+int speaker = 12;
+const int ledPin1 = 7;//Yellow
+const int ledPin2 = 8;//red LED
+const int ledPin3 = 9;//green LED
+int r = 0;
+
+ void setup() {
+
+  Serial.begin(9600);
+
+  pinMode(buttonPin1, INPUT); 
+pinMode(buttonPin2, INPUT); 
+pinMode(buttonPin3, INPUT); 
+
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  
+
+ 
+ }
+  
+void loop() {
+    Serial.println(buttonState1);
+    Serial.print(buttonState2);
+    Serial.print(buttonState3);
+    
+ buttonState1 = digitalRead(buttonPin1);
+buttonState2 = digitalRead(buttonPin2);
+buttonState3 = digitalRead(buttonPin3);
+
+  
+  if ((millis() % 1000) == 0) {
+      r = random(0,3);
+
+    if (r == 0){
+    
+  digitalWrite(ledPin1, HIGH);
+  delay(5);
+  digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin3, LOW);
+ if (buttonState1 == HIGH) {
+      digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, HIGH);
+  digitalWrite(ledPin3, HIGH);
+  }
+    }
+
+    if (r == 1){
+  digitalWrite(ledPin2, HIGH);
+  delay(5);
+  digitalWrite(ledPin3, LOW);
+  digitalWrite(ledPin1, LOW);
+if (buttonState2 == HIGH) {
+      digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, HIGH);
+  digitalWrite(ledPin3, HIGH);
+}
+
+    }
+
+  if (r == 2){
+  digitalWrite(ledPin3, HIGH);
+  delay(5);
+  digitalWrite(ledPin1, LOW);
+  digitalWrite(ledPin2, LOW);
+if (buttonState3 == HIGH) {
+      digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, HIGH);
+  digitalWrite(ledPin3, HIGH);
+}
+  }
+
+ }
+}
