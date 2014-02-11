@@ -47,24 +47,22 @@ buttonState3 = digitalRead(buttonPin3);
 
     if (r == 0){
     
-  digitalWrite(ledPin1, HIGH);
-  delay(5);
+  digitalWrite(ledPin1, HIGH);//when LED 1 is on 
   digitalWrite(ledPin2, LOW);
   digitalWrite(ledPin3, LOW);
- if (buttonState1 == HIGH) {
-      digitalWrite(ledPin1, HIGH);
+ if (buttonState1 == HIGH) {//If botten 1 is pressed 
+      digitalWrite(ledPin1, HIGH);//then let the three LED turned on
   digitalWrite(ledPin2, HIGH);
   digitalWrite(ledPin3, HIGH);
   }
     }
 
     if (r == 1){
-  digitalWrite(ledPin2, HIGH);
-  delay(5);
+  digitalWrite(ledPin2, HIGH);//when LED 2 is turned on
   digitalWrite(ledPin3, LOW);
   digitalWrite(ledPin1, LOW);
-if (buttonState2 == HIGH) {
-      digitalWrite(ledPin1, HIGH);
+if (buttonState2 == HIGH) {//If botten 2 is pressed 
+      digitalWrite(ledPin1, HIGH);//then let the three LED turned on
   digitalWrite(ledPin2, HIGH);
   digitalWrite(ledPin3, HIGH);
 }
@@ -72,12 +70,11 @@ if (buttonState2 == HIGH) {
     }
 
   if (r == 2){
-  digitalWrite(ledPin3, HIGH);
-  delay(5);
+  digitalWrite(ledPin3, HIGH);//when LED 3 is turned on
   digitalWrite(ledPin1, LOW);
   digitalWrite(ledPin2, LOW);
-if (buttonState3 == HIGH) {
-      digitalWrite(ledPin1, HIGH);
+if (buttonState3 == HIGH) {//If botten 3 is pressed 
+      digitalWrite(ledPin1, HIGH);//then let the three LED turned on
   digitalWrite(ledPin2, HIGH);
   digitalWrite(ledPin3, HIGH);
 }
