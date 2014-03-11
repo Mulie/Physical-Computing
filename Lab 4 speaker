@@ -1,0 +1,17 @@
+//Mulugeta Bisrat
+ 
+// Pin 9 has an speaker connected on most Arduino boards.
+
+int speaker = 9;
+
+void setup() {                
+  pinMode(speaker, OUTPUT);     
+}
+
+
+void loop() {
+  digitalWrite(speaker, HIGH);   // turn the speaker on (HIGH is the voltage level)
+  delay(10);               // wait for 10ms by doing this you get the click sound when the botton is pushed
+  digitalWrite(speaker, LOW);    // turn the speaker off by making the voltage LOW
+  delay(100);              
+}
