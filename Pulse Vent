@@ -1,0 +1,25 @@
+//Mulugeta BIsrat
+//Sensor Vent Project 
+//06/04/2014
+
+int Motor = 9; // motor read from pin 9
+int myValue;
+void setup() {
+  Serial.begin(115200);//read from this  serial port
+    pinMode(Motor, OUTPUT);
+}
+
+void loop() {
+ Serial.println(myValue);//first serial port
+ 
+ myValue = analogRead(A0);
+ 
+ // background(200);
+  
+if(myValue > 550){
+digitalWrite(Motor, HIGH); } // turn the Motor on (HIGH is the voltage level)
+
+if(myValue <= 550){
+digitalWrite(Motor, LOW); }// turn the Motor off when low is the voltage level
+
+}
